@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodanie projektu</title>
+</head>
+<body>
+    <p th:if="${add}">Dodano poprawnie</p>
+
+    <form action="#" th:action="@{/addproject}" th:object="${addproject}" method="post">
+        <p>Tytuł: <input type="text" th:field="*{title}"/></p>
+        <p>Opis: <input type="text" th:field="*{description}"/></p>
+        <p>Obrazek: <input type="text" th:field="*{imgsrc}"/></p>
+        <p>Data: <input type="text" th:field="*{date}"/></p>
+        <p>Kategoria: <input type="text" th:field="*{category}"/></p>
+        <p>idproject: <input type="text" th:field="*{idproject}"/></p>
+        <p><input type="submit" value="Dodaj"/></p>
+    </form>
+    <br>
+
+    <table border="1">
+        <tr>
+            <th>Nazwa projektu</th>
+            <th>Id projectu</th>
+            <th>Usuń</th>
+            <th>Edytuj</th>
+        </tr>
+        <tr th:each="project : ${project}">
+            <td th:text="${project.title}"></td>
+            <td th:text="${project.idproject}"></td>
+            <td>
+                <a th:href="@{/addproject/delete/{id}(id=${project.id})}">
+                    <span>Usuń</span>
+                </a>
+            </td>
+            <td>
+                <a th:href="@{/addproject/edit/{id}(id=${project.id})}">
+                    <span>Edytuj</span>
+                </a>
+            </td>
+        </tr>
+    </table>
+
+
+</body>
+</html>
