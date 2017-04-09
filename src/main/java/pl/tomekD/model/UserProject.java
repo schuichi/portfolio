@@ -8,14 +8,24 @@ import javax.persistence.Id;
 public class UserProject {
 
     @Id
-    @GeneratedValue
+//    @GeneratedValue
     private int id;
 
-    private String name;
+    private String username;
 
     private String password;
 
+    private String role;
+
     public UserProject() {    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
     public int getId() {
         return id;
@@ -25,12 +35,12 @@ public class UserProject {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String name) {
+        this.username = username;
     }
 
     public String getPassword() {
