@@ -1,23 +1,15 @@
 package pl.tomekD.dao;
 
 
+import org.springframework.data.repository.CrudRepository;
 import pl.tomekD.model.Project;
+import org.springframework.data.repository.Repository;
 
-import java.util.List;
-
-
-public interface ProjectRepository {
-
-
-    void save(Project project);
-
-    void delete(Long id);
+@org.springframework.stereotype.Repository
+public interface ProjectRepository extends CrudRepository<Project, Long> {
 
     Project findOne(Long id);
 
-    List<Project> findAll();
-
-    Project findByTitle(String title);
 
 
 }
