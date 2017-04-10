@@ -15,7 +15,6 @@
     <p>Obrazek: <input type="text" th:field="*{imgsrc}"/></p>
     <p>Data: <input type="text" th:field="*{date}"/></p>
     <p>Kategoria: <input type="text" th:field="*{category}"/></p>
-    <p>idproject: <input type="text" th:field="*{idproject}"/></p>
     <p><input type="submit" value="Zachowaj"/></p>
 </form>
 <br>
@@ -23,13 +22,13 @@
 <table border="1">
     <tr>
         <th>Nazwa projektu</th>
-        <th>Id projectu</th>
+        <th>Opis</th>
         <th>Usuń</th>
         <th>Edytuj</th>
     </tr>
     <tr th:each="project : ${project}">
         <td th:text="${project.title}"></td>
-        <td th:text="${project.idproject}"></td>
+        <td th:text="${project.description}"></td>
         <td>
             <a th:href="@{/addproject/delete/{id}(id=${project.id})}">
                 <span>Usuń</span>

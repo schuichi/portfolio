@@ -12,8 +12,6 @@ public class Project {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String idproject;
-
     private String imgsrc;
 
     private String title;
@@ -34,13 +32,6 @@ public class Project {
         this.id = id;
     }
 
-    public String getIdproject() {
-        return idproject;
-    }
-
-    public void setIdproject(String idproject) {
-        this.idproject = idproject;
-    }
 
     public String getImgsrc() {
         return imgsrc;

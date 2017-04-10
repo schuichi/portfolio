@@ -199,6 +199,7 @@
 
 <!-- Footer -->
 <footer class="text-center">
+    <!--
     <div class="footer-above">
         <div class="container">
             <div class="row">
@@ -234,6 +235,7 @@
             </div>
         </div>
     </div>
+    -->
     <div class="footer-below">
         <div class="container">
             <div class="row">
@@ -273,14 +275,9 @@
                             <img th:src="@{'/img/portfolio/' +${project.imgsrc} +'.png'}" class="img-responsive img-centered" alt="">
                             <p th:text="${project.description}"><a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>.</p>
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
                                 <li th:text="'Data: ' + ${project.date}"></li>
                                 <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
+                                    <strong><span th:text="${project.category}"></span></strong>
                                 </li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>Zamknij</button>
